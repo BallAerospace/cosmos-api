@@ -1,0 +1,24 @@
+openapi: 3.1.0
+info:
+  title: Cosmos OpenAPI document
+  version: 0.0.1
+  contact:
+    name: Cosmos Support
+    url: https://cosmosc2.com
+    email: cosmos@ballaerospace.com
+paths:
+  /cosmos-api/internal/status:
+    get:
+      operationId: internalStatus
+      summary: Get the status of cosmos
+      responses:
+        '200':
+          description: |-
+            200 response
+          content:
+            application/json:
+              examples:
+                ok:
+                  value: {
+                    "status": "OK"
+                  }
