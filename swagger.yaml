@@ -6,7 +6,163 @@ info:
     name: Cosmos Support
     url: https://cosmosc2.com
     email: cosmos@ballaerospace.com
+components:
+  responses:
+    '401':
+      description: |-
+        401 Unauthorized
+      content:
+        application/json:
+          examples:
+            redis:
+              value: {
+                "status": "error",
+                "message": "message"
+              }
+    '403':
+      description: |-
+        403 Forbidden
+      content:
+        application/json:
+          examples:
+            redis:
+              value: {
+                "status": "error",
+                "message": "message"
+              }
 paths:
+  # resources :routers, only: [:index, :create]
+  /cosmos-api/routers:
+    get:
+      operationId: routersGet
+      summary: Get cosmos routers
+    post:
+      operationId: routersPost
+      summary: Create a cosmos router
+
+  # get '/routers/:id', to: 'routers#show', id: /[^\/]+/
+  /cosmos-api/routers/{id}:
+    get:
+      operationId: routersIdGet
+      summary: Get cosmos router id
+  # match '/routers/:id', to: 'routers#update', id: /[^\/]+/, via: [:patch, :put]
+    put:
+      operationId: routersPut
+      summary: Put update cosmos routers
+    patch:
+      operationId: routersPatch
+      summary: Patch update cosmos router
+  # delete '/routers/:id', to: 'routers#destroy', id: /[^\/]+/
+    delete:
+      operationId: routersDelete
+      summary: Delete cosmos router
+
+  # resources :interfaces, only: [:index, :create]
+  # get '/interfaces/:id', to: 'interfaces#show', id: /[^\/]+/
+  # match '/interfaces/:id', to: 'interfaces#update', id: /[^\/]+/, via: [:patch, :put]
+  # delete '/interfaces/:id', to: 'interfaces#destroy', id: /[^\/]+/
+ 
+  # resources :targets, only: [:index, :create]
+  # get '/targets/:id', to: 'targets#show', id: /[^\/]+/
+  # match '/targets/:id', to: 'targets#update', id: /[^\/]+/, via: [:patch, :put]
+  # delete '/targets/:id', to: 'targets#destroy', id: /[^\/]+/
+ 
+  # resources :gems, only: [:index, :create]
+  # get '/gems/:id', to: 'gems#show', id: /[^\/]+/
+  # match '/gems/:id', to: 'gems#update', id: /[^\/]+/, via: [:patch, :put]
+  # delete '/gems/:id', to: 'gems#destroy', id: /[^\/]+/
+ 
+  # resources :microservices, only: [:index, :create]
+  # get '/microservices/:id', to: 'microservices#show', id: /[^\/]+/
+  # match '/microservices/:id', to: 'microservices#update', id: /[^\/]+/, via: [:patch, :put]
+  # delete '/microservices/:id', to: 'microservices#destroy', id: /[^\/]+/
+
+  # get '/microservice_status/:id', to: 'microservice_status#show', id: /[^\/]+/
+ 
+  # post '/tools/position/:id', to: 'tools#position', id: /[^\/]+/
+  # resources :tools, only: [:index, :create]
+  # get '/tools/:id', to: 'tools#show', id: /[^\/]+/
+  # match '/tools/:id', to: 'tools#update', id: /[^\/]+/, via: [:patch, :put]
+  # delete '/tools/:id', to: 'tools#destroy', id: /[^\/]+/
+ 
+  # resources :scopes, only: [:index, :create]
+  # get '/scopes/:id', to: 'scopes#show', id: /[^\/]+/
+  # match '/scopes/:id', to: 'scopes#update', id: /[^\/]+/, via: [:patch, :put]
+  # delete '/scopes/:id', to: 'scopes#destroy', id: /[^\/]+/
+ 
+  # resources :roles, only: [:index, :create]
+  # get '/roles/:id', to: 'roles#show', id: /[^\/]+/
+  # match '/roles/:id', to: 'roles#update', id: /[^\/]+/, via: [:patch, :put]
+  # delete '/roles/:id', to: 'roles#destroy', id: /[^\/]+/
+ 
+  # resources :widgets, only: [:index, :create]
+  # get '/widgets/:id', to: 'widgets#show', id: /[^\/]+/
+  # match '/widgets/:id', to: 'widgets#update', id: /[^\/]+/, via: [:patch, :put]
+  # delete '/widgets/:id', to: 'widgets#destroy', id: /[^\/]+/
+ 
+  # resources :permissions, only: [:index]
+ 
+  # post '/plugins/install/:id', to: 'plugins#install', id: /[^\/]+/
+  # resources :plugins, only: [:index, :create]
+  # get '/plugins/:id', to: 'plugins#show', id: /[^\/]+/
+  # match '/plugins/:id', to: 'plugins#update', id: /[^\/]+/, via: [:patch, :put]
+  # delete '/plugins/:id', to: 'plugins#destroy', id: /[^\/]+/
+ 
+  # resources :environment, only: [:index, :create]
+  # delete '/environment/:name', to: 'environment#destroy', name: /[^\/]+/
+ 
+  # resources :timeline, only: [:index, :create]
+  # get '/timeline/:name', to: 'timeline#show', name: /[^\/]+/
+  # post '/timeline/:name/color', to: 'timeline#color', name: /[^\/]+/
+  # delete '/timeline/:name', to: 'timeline#destroy', name: /[^\/]+/
+ 
+  # post '/timeline/activities/create', to: 'activity#multi_create'
+  # post '/timeline/activities/delete', to: 'activity#multi_destroy'
+ 
+  # get '/timeline/:name/count', to: 'activity#count', name: /[^\/]+/
+  # get '/timeline/:name/activities', to: 'activity#index', name: /[^\/]+/
+  # post '/timeline/:name/activities', to: 'activity#create', name: /[^\/]+/
+  # get '/timeline/:name/activity/:id', to: 'activity#show', name: /[^\/]+/, id: /[^\/]+/
+  # post '/timeline/:name/activity/:id', to: 'activity#event', name: /[^\/]+/, id: /[^\/]+/
+  # match '/timeline/:name/activity/:id', to: 'activity#update', name: /[^\/]+/, id: /[^\/]+/, via: [:patch, :put]
+  # delete '/timeline/:name/activity/:id', to: 'activity#destroy', name: /[^\/]+/, id: /[^\/]+/
+ 
+  # get '/storage/download/:object_id', to: 'storage#get_download_presigned_request', object_id: /[^\/]+/
+  # get '/storage/upload/:object_id', to: 'storage#get_upload_presigned_request', object_id: /[^\/]+/
+ 
+  # get "/screen/:target" => "api#screens"
+  # get "/screen/:target/:screen" => "api#screen"
+  # post "/screen" => "api#screen_save"
+ 
+  # post "/api" => "api#api"
+ 
+  # get "/auth/token-exists" => "auth#token_exists"
+  # post "/auth/verify" => "auth#verify"
+  # post "/auth/set" => "auth#set"
+ 
+  # get "/internal/metrics" => "internal_metrics#index"
+  /cosmos-api/internal/metrics:
+    get:
+      operationId: internalStatus
+      summary: Get the status of cosmos
+      responses:
+        '200':
+          description: |-
+            200 response
+          content:
+            plain/text:
+              examples:
+                metrics:
+                  value: |-
+                    # TYPE metric_output_duration_seconds histogram
+                    # HELP metric_output_duration_seconds internal metric generated from cosmos/utilities/metric.rb.
+                    metric_output_duration_seconds{scope="DEFAULT",microservice="DEFAULT__DECOMLOG__TEMPLATED",percentile="10"} 0.00041795999932219273
+                    metric_output_duration_seconds{scope="DEFAULT",microservice="DEFAULT__DECOMLOG__TEMPLATED",percentile="50"} 0.0005948000034550205
+                    metric_output_duration_seconds{scope="DEFAULT",microservice="DEFAULT__DECOMLOG__TEMPLATED",percentile="90"} 0.0011830799994640984
+                    metric_output_duration_seconds{scope="DEFAULT",microservice="DEFAULT__DECOMLOG__TEMPLATED",percentile="95"} 0.0015175499993347328
+                    metric_output_duration_seconds{scope="DEFAULT",microservice="DEFAULT__DECOMLOG__TEMPLATED",percentile="99"} 0.0031585980016825416
+
+  # get "/internal/status" => "internal_status#status"
   /cosmos-api/internal/status:
     get:
       operationId: internalStatus
@@ -18,7 +174,35 @@ paths:
           content:
             application/json:
               examples:
-                ok:
+                up:
                   value: {
-                    "status": "OK"
+                    "status": "UP"
                   }
+                down:
+                  value: {
+                    "status": "DOWN"
+                  }
+
+  # get "/internal/health" => "internal_health#health"
+  /cosmos-api/internal/health:
+    get:
+      operationId: internalHealth
+      summary: Get the status of cosmos-redis
+      responses:
+        '200':
+          description: |-
+            200 response
+          content:
+            application/json:
+              examples:
+                redis:
+                  value: {
+                    "redis": {}
+                  }
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # get "/time" => "time#get_current"
+  # get "map.json" => "tools#importmap"
