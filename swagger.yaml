@@ -34,6 +34,8 @@ paths:
   # resources :routers, only: [:index, :create]
   /cosmos-api/routers:
     get:
+      tags:
+        - "routers"
       operationId: routersGet
       summary: Get cosmos routers
     post:
@@ -43,21 +45,41 @@ paths:
   # get '/routers/:id', to: 'routers#show', id: /[^\/]+/
   /cosmos-api/routers/{id}:
     get:
+      tags:
+        - "routers"
       operationId: routersIdGet
       summary: Get cosmos router id
   # match '/routers/:id', to: 'routers#update', id: /[^\/]+/, via: [:patch, :put]
     put:
+      tags:
+        - "routers"
       operationId: routersPut
       summary: Put update cosmos routers
     patch:
+      tags:
+        - "routers"
       operationId: routersPatch
       summary: Patch update cosmos router
   # delete '/routers/:id', to: 'routers#destroy', id: /[^\/]+/
     delete:
+      tags:
+        - "routers"
       operationId: routersDelete
       summary: Delete cosmos router
 
   # resources :interfaces, only: [:index, :create]
+  /cosmos-api/interfaces:
+    get:
+      tags:
+        - "interfaces"
+      operationId: interfacesGet
+      summary: Get cosmos interfaces
+    post:
+      tags:
+        - "interfaces"
+      operationId: interfacesPost
+      summary: Create a cosmos interface
+
   # get '/interfaces/:id', to: 'interfaces#show', id: /[^\/]+/
   # match '/interfaces/:id', to: 'interfaces#update', id: /[^\/]+/, via: [:patch, :put]
   # delete '/interfaces/:id', to: 'interfaces#destroy', id: /[^\/]+/
@@ -143,6 +165,8 @@ paths:
   # get "/internal/metrics" => "internal_metrics#index"
   /cosmos-api/internal/metrics:
     get:
+      tags:
+        - "internal"
       operationId: internalStatus
       summary: Get the status of cosmos
       responses:
@@ -165,6 +189,8 @@ paths:
   # get "/internal/status" => "internal_status#status"
   /cosmos-api/internal/status:
     get:
+      tags:
+        - "internal"
       operationId: internalStatus
       summary: Get the status of cosmos
       responses:
@@ -186,6 +212,8 @@ paths:
   # get "/internal/health" => "internal_health#health"
   /cosmos-api/internal/health:
     get:
+      tags:
+        - "internal"
       operationId: internalHealth
       summary: Get the status of cosmos-redis
       responses:
