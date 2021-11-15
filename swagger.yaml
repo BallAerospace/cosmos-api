@@ -7,6 +7,21 @@ info:
     url: https://cosmosc2.com
     email: cosmos@ballaerospace.com
 components:
+  parameters:
+    id:
+      name: id
+      in: path
+      description: id to fetch
+      required: true
+      schema:
+        type: string
+    name:
+      name: name
+      in: path
+      description: name to fetch
+      required: true
+      schema:
+        type: string
   responses:
     '401':
       description: |-
@@ -51,23 +66,31 @@ paths:
         - "routers"
       operationId: routersIdGet
       summary: Get cosmos router id
+      parameters:
+      - $ref: '#/components/parameters/id'
   # match '/routers/:id', to: 'routers#update', id: /[^\/]+/, via: [:patch, :put]
     put:
       tags:
         - "routers"
       operationId: routersPut
       summary: Update a cosmos routers
+      parameters:
+      - $ref: '#/components/parameters/id'
     patch:
       tags:
         - "routers"
       operationId: routersPatch
       summary: Update a cosmos router
+      parameters:
+      - $ref: '#/components/parameters/id'
   # delete '/routers/:id', to: 'routers#destroy', id: /[^\/]+/
     delete:
       tags:
         - "routers"
       operationId: routersDelete
       summary: Delete cosmos router
+      parameters:
+      - $ref: '#/components/parameters/id'
 
   # resources :interfaces, only: [:index, :create]
   /cosmos-api/interfaces:
@@ -89,23 +112,31 @@ paths:
         - "interfaces"
       operationId: interfacesIdGet
       summary: Get a single cosmos interface
+      parameters:
+      - $ref: '#/components/parameters/id'
   # match '/interfaces/:id', to: 'interfaces#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
         - "interfaces"
       operationId: interfacesIdPatch
       summary: Update cosmos interface
+      parameters:
+      - $ref: '#/components/parameters/id'
     put:
       tags:
         - "interfaces"
       operationId: interfacesIdPut
       summary: Update cosmos interface
+      parameters:
+      - $ref: '#/components/parameters/id'
   # delete '/interfaces/:id', to: 'interfaces#destroy', id: /[^\/]+/
     delete:
       tags:
         - "interfaces"
       operationId: interfacesIdDelete
       summary: Delete a cosmos interface
+      parameters:
+      - $ref: '#/components/parameters/id'
  
   # resources :targets, only: [:index, :create]
   /cosmos-api/targets:
@@ -126,23 +157,31 @@ paths:
         - "targets"
       operationId: targetsIdGet
       summary: Get a single cosmos targets
+      parameters:
+      - $ref: '#/components/parameters/id'
   # match '/targets/:id', to: 'targets#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
         - "targets"
       operationId: targetsIdPatch
       summary: Update a single cosmos targets
+      parameters:
+      - $ref: '#/components/parameters/id'
     put:
       tags:
         - "targets"
       operationId: targetsIdPut
       summary: Update a single cosmos targets
+      parameters:
+      - $ref: '#/components/parameters/id'
   # delete '/targets/:id', to: 'targets#destroy', id: /[^\/]+/
     delete:
       tags:
         - "targets"
       operationId: targetsIdDelete
       summary: Delete a single cosmos targets
+      parameters:
+      - $ref: '#/components/parameters/id'
  
   # resources :gems, only: [:index, :create]
   /cosmos-api/gems:
@@ -163,23 +202,31 @@ paths:
         - "gems"
       operationId: gemsIdGet
       summary: Get a single cosmos gem
+      parameters:
+      - $ref: '#/components/parameters/id'
   # match '/gems/:id', to: 'gems#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
         - "gems"
       operationId: gemsIdPatch
       summary: Update a single cosmos gem
+      parameters:
+      - $ref: '#/components/parameters/id'
     put:
       tags:
         - "gems"
       operationId: gemsIdPut
       summary: Update a single cosmos gem
+      parameters:
+      - $ref: '#/components/parameters/id'
   # delete '/gems/:id', to: 'gems#destroy', id: /[^\/]+/
     delete:
       tags:
         - "gems"
       operationId: gemsIdDelete
       summary: Delete a single cosmos gem
+      parameters:
+      - $ref: '#/components/parameters/id'
  
   # resources :microservices, only: [:index, :create]
   /cosmos-api/microservices:
@@ -200,23 +247,31 @@ paths:
         - "microservices"
       operationId: microservicesIdGet
       summary: Get a single cosmos microservices
+      parameters:
+      - $ref: '#/components/parameters/id'
   # match '/microservices/:id', to: 'microservices#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
         - "microservices"
       operationId: microservicesIdPatch
       summary: Update a single cosmos microservices
+      parameters:
+      - $ref: '#/components/parameters/id'
     put:
       tags:
         - "microservices"
       operationId: microservicesIdPut
       summary: Update a single cosmos microservices
+      parameters:
+      - $ref: '#/components/parameters/id'
   # delete '/microservices/:id', to: 'microservices#destroy', id: /[^\/]+/
     delete:
       tags:
         - "microservices"
       operationId: microservicesIdDelete
       summary: Delete a single cosmos microservices
+      parameters:
+      - $ref: '#/components/parameters/id'
 
   # get '/microservice_status/:id', to: 'microservice_status#show', id: /[^\/]+/
   /cosmos-api/microservices_status/{id}:
@@ -225,6 +280,8 @@ paths:
         - "microservices status"
       operationId: microservicesStatusGet
       summary: Get a cosmos microservices status
+      parameters:
+      - $ref: '#/components/parameters/id'
 
   # resources :tools, only: [:index, :create]
   /cosmos-api/tools:
@@ -245,23 +302,31 @@ paths:
         - "tools"
       operationId: toolsIdGet
       summary: Get a single cosmos tools
+      parameters:
+      - $ref: '#/components/parameters/id'
   # match '/tools/:id', to: 'tools#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
         - "tools"
       operationId: toolsIdPatch
       summary: Update a single cosmos tools
+      parameters:
+      - $ref: '#/components/parameters/id'
     put:
       tags:
         - "tools"
       operationId: toolsIdPut
       summary: Update a single cosmos tools
+      parameters:
+      - $ref: '#/components/parameters/id'
   # delete '/tools/:id', to: 'tools#destroy', id: /[^\/]+/
     delete:
       tags:
         - "tools"
       operationId: toolsIdDelete
       summary: Delete a single cosmos tools
+      parameters:
+      - $ref: '#/components/parameters/id'
 
   # post '/tools/position/:id', to: 'tools#position', id: /[^\/]+/
   /cosmos-api/tools/position/{id}:
@@ -270,6 +335,8 @@ paths:
         - "tool position"
       operationId: toolsPositionGet
       summary: Update a tools position in the nav menu
+      parameters:
+      - $ref: '#/components/parameters/id'
 
   # resources :widgets, only: [:index, :create]
   /cosmos-api/widgets:
@@ -290,23 +357,31 @@ paths:
         - "widgets"
       operationId: widgetsIdGet
       summary: Get a single cosmos widget
+      parameters:
+      - $ref: '#/components/parameters/id'
   # match '/widgets/:id', to: 'widgets#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
         - "widgets"
       operationId: widgetsIdPatch
       summary: Update a single cosmos widget
+      parameters:
+      - $ref: '#/components/parameters/id'
     put:
       tags:
         - "widgets"
       operationId: widgetsIdPut
       summary: Update a single cosmos widget
+      parameters:
+      - $ref: '#/components/parameters/id'
   # delete '/widgets/:id', to: 'widgets#destroy', id: /[^\/]+/
     delete:
       tags:
         - "widgets"
       operationId: widgetsIdDelete
       summary: Delete a single cosmos widget
+      parameters:
+      - $ref: '#/components/parameters/id'
  
   # resources :plugins, only: [:index, :create]
   /cosmos-api/plugins:
@@ -327,23 +402,31 @@ paths:
         - "plugins"
       operationId: pluginsIdGet
       summary: Get a single cosmos plugin
+      parameters:
+      - $ref: '#/components/parameters/id'
   # match '/plugins/:id', to: 'plugins#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
         - "plugins"
       operationId: pluginsIdPatch
       summary: Update a single cosmos plugin
+      parameters:
+      - $ref: '#/components/parameters/id'
     put:
       tags:
         - "plugins"
       operationId: pluginsIdPut
       summary: Update a single cosmos plugin
+      parameters:
+      - $ref: '#/components/parameters/id'
   # delete '/plugins/:id', to: 'plugins#destroy', id: /[^\/]+/
     delete:
       tags:
         - "plugins"
       operationId: pluginsIdDelete
       summary: Delete a single cosmos plugin
+      parameters:
+      - $ref: '#/components/parameters/id'
 
   # post '/plugins/install/:id', to: 'plugins#install', id: /[^\/]+/
   /cosmos-api/plugins/install/{id}:
@@ -352,6 +435,8 @@ paths:
         - "install plugin"
       operationId: pluginsInstallIdPost
       summary: Install a single cosmos plugin
+      parameters:
+      - $ref: '#/components/parameters/id'
  
   # resources :environment, only: [:index, :create]
   /cosmos-api/environment:
@@ -372,6 +457,8 @@ paths:
         - "environment"
       operationId: environmentIdDelete
       summary: Delete a single cosmos environment
+      parameters:
+      - $ref: '#/components/parameters/name'
  
   # resources :timeline, only: [:index, :create]
   /cosmos-api/timeline:
@@ -392,12 +479,16 @@ paths:
         - "timeline"
       operationId: timelineGet
       summary: Get a cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
   # delete '/timeline/:name', to: 'timeline#destroy', name: /[^\/]+/
     delete:
       tags:
         - "timeline"
       operationId: timelineDelete
       summary: Delete a cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
   # post '/timeline/:name/color', to: 'timeline#color', name: /[^\/]+/
   /cosmos-api/timeline/{name}/color:
     post:
@@ -405,6 +496,8 @@ paths:
         - "timeline"
       operationId: timelineColorPost
       summary: Update cosmos timeline color
+      parameters:
+      - $ref: '#/components/parameters/name'
  
   # post '/timeline/activities/create', to: 'activity#multi_create'
   /cosmos-api/timeline/activities/create:
@@ -428,6 +521,8 @@ paths:
         - "timeline"
       operationId: timelineCountGet
       summary: Get the number of activities on cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
   # get '/timeline/:name/activities', to: 'activity#index', name: /[^\/]+/
   /cosmos-api/timeline/{name}/activities:
     get:
@@ -435,12 +530,16 @@ paths:
         - "timeline"
       operationId: timelineActivitiesGet
       summary: Get activities on cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
   # post '/timeline/:name/activities', to: 'activity#create', name: /[^\/]+/
     post:
       tags:
         - "timeline"
       operationId: timelineActivitiesPost
       summary: Create an activity on cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
   # get '/timeline/:name/activity/:id', to: 'activity#show', name: /[^\/]+/, id: /[^\/]+/
   /cosmos-api/timeline/{name}/activity/{id}:
     get:
@@ -448,29 +547,44 @@ paths:
         - "activity"
       operationId: timelineActivityGet
       summary: Get activity on cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/id'
   # post '/timeline/:name/activity/:id', to: 'activity#event', name: /[^\/]+/, id: /[^\/]+/
     post:
       tags:
         - "activity"
       operationId: timelineActivityGet
       summary: Get activity on cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/id'
   # match '/timeline/:name/activity/:id', to: 'activity#update', name: /[^\/]+/, id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
         - "activity"
       operationId: timelineActivityPatch
       summary: Update an activity on cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/id'
     put:
       tags:
         - "activity"
       operationId: timelineActivityPut
       summary: Update an activity on cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/id'
   # delete '/timeline/:name/activity/:id', to: 'activity#destroy', name: /[^\/]+/, id: /[^\/]+/
     delete:
       tags:
         - "activity"
       operationId: timelineActivityDelete
       summary: Delete an activity on cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/id'
  
   # get '/storage/download/:object_id', to: 'storage#get_download_presigned_request', object_id: /[^\/]+/
   /cosmos-api/storage/download/{object_id}:
@@ -479,6 +593,13 @@ paths:
         - "storage"
       operationId: storageGet
       summary: Storage API Download
+      parameters:
+      - name: object_id
+        in: path
+        description: Object ID
+        required: true
+        schema:
+          type: string
   # get '/storage/upload/:object_id', to: 'storage#get_upload_presigned_request', object_id: /[^\/]+/
   /cosmos-api/storage/upload/{object_id}:
     get:
@@ -486,6 +607,13 @@ paths:
         - "storage"
       operationId: storageGet
       summary: Storage API Upload
+      parameters:
+      - name: object_id
+        in: path
+        description: Object ID
+        required: true
+        schema:
+          type: string
  
   # post "/screen" => "api#screen_save"
   /cosmos-api/screen:
@@ -501,6 +629,13 @@ paths:
         - "screen"
       operationId: screenGet
       summary: Get screens from a target
+      parameters:
+      - name: target
+        in: path
+        description: Cosmos target
+        required: true
+        schema:
+          type: string
   # get "/screen/:target/:screen" => "api#screen"
   /cosmos-api/screen/{target}/{screen}:
     get:
@@ -508,6 +643,19 @@ paths:
         - "screen"
       operationId: screenGet
       summary: Get a screen from a target
+      parameters:
+      - name: target
+        in: path
+        description: Cosmos target
+        required: true
+        schema:
+          type: string
+      - name: screen
+        in: path
+        description: Cosmos target screen
+        required: true
+        schema:
+          type: string
  
   # post "/api" => "api#api"
   /cosmos-api/api:
