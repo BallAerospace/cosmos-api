@@ -39,6 +39,8 @@ paths:
       operationId: routersGet
       summary: Get cosmos routers
     post:
+      tags:
+        - "routers"
       operationId: routersPost
       summary: Create a cosmos router
 
@@ -54,12 +56,12 @@ paths:
       tags:
         - "routers"
       operationId: routersPut
-      summary: Put update cosmos routers
+      summary: Update a cosmos routers
     patch:
       tags:
         - "routers"
       operationId: routersPatch
-      summary: Patch update cosmos router
+      summary: Update a cosmos router
   # delete '/routers/:id', to: 'routers#destroy', id: /[^\/]+/
     delete:
       tags:
@@ -81,86 +83,461 @@ paths:
       summary: Create a cosmos interface
 
   # get '/interfaces/:id', to: 'interfaces#show', id: /[^\/]+/
+  /cosmos-api/interfaces/{id}:
+    get:
+      tags:
+        - "interfaces"
+      operationId: interfacesIdGet
+      summary: Get a single cosmos interface
   # match '/interfaces/:id', to: 'interfaces#update', id: /[^\/]+/, via: [:patch, :put]
+    patch:
+      tags:
+        - "interfaces"
+      operationId: interfacesIdPatch
+      summary: Update cosmos interface
+    put:
+      tags:
+        - "interfaces"
+      operationId: interfacesIdPut
+      summary: Update cosmos interface
   # delete '/interfaces/:id', to: 'interfaces#destroy', id: /[^\/]+/
+    delete:
+      tags:
+        - "interfaces"
+      operationId: interfacesIdDelete
+      summary: Delete a cosmos interface
  
   # resources :targets, only: [:index, :create]
+  /cosmos-api/targets:
+    get:
+      tags:
+        - "targets"
+      operationId: targetsGet
+      summary: Get cosmos targets
+    post:
+      tags:
+        - "targets"
+      operationId: targetsPost
+      summary: Create a cosmos target
   # get '/targets/:id', to: 'targets#show', id: /[^\/]+/
+  /cosmos-api/targets/{id}:
+    get:
+      tags:
+        - "targets"
+      operationId: targetsIdGet
+      summary: Get a single cosmos targets
   # match '/targets/:id', to: 'targets#update', id: /[^\/]+/, via: [:patch, :put]
+    patch:
+      tags:
+        - "targets"
+      operationId: targetsIdPatch
+      summary: Update a single cosmos targets
+    put:
+      tags:
+        - "targets"
+      operationId: targetsIdPut
+      summary: Update a single cosmos targets
   # delete '/targets/:id', to: 'targets#destroy', id: /[^\/]+/
+    delete:
+      tags:
+        - "targets"
+      operationId: targetsIdDelete
+      summary: Delete a single cosmos targets
  
   # resources :gems, only: [:index, :create]
+  /cosmos-api/gems:
+    get:
+      tags:
+        - "gems"
+      operationId: gemsGet
+      summary: Get cosmos gems
+    post:
+      tags:
+        - "gems"
+      operationId: gemsPost
+      summary: Create a cosmos gem
   # get '/gems/:id', to: 'gems#show', id: /[^\/]+/
+  /cosmos-api/gems/{id}:
+    get:
+      tags:
+        - "gems"
+      operationId: gemsIdGet
+      summary: Get a single cosmos gem
   # match '/gems/:id', to: 'gems#update', id: /[^\/]+/, via: [:patch, :put]
+    patch:
+      tags:
+        - "gems"
+      operationId: gemsIdPatch
+      summary: Update a single cosmos gem
+    put:
+      tags:
+        - "gems"
+      operationId: gemsIdPut
+      summary: Update a single cosmos gem
   # delete '/gems/:id', to: 'gems#destroy', id: /[^\/]+/
+    delete:
+      tags:
+        - "gems"
+      operationId: gemsIdDelete
+      summary: Delete a single cosmos gem
  
   # resources :microservices, only: [:index, :create]
+  /cosmos-api/microservices:
+    get:
+      tags:
+        - "microservices"
+      operationId: microservicesGet
+      summary: Get cosmos microservices
+    post:
+      tags:
+        - "microservices"
+      operationId: microservicesPost
+      summary: Create a cosmos microservices
   # get '/microservices/:id', to: 'microservices#show', id: /[^\/]+/
+  /cosmos-api/microservices/{id}:
+    get:
+      tags:
+        - "microservices"
+      operationId: microservicesIdGet
+      summary: Get a single cosmos microservices
   # match '/microservices/:id', to: 'microservices#update', id: /[^\/]+/, via: [:patch, :put]
+    patch:
+      tags:
+        - "microservices"
+      operationId: microservicesIdPatch
+      summary: Update a single cosmos microservices
+    put:
+      tags:
+        - "microservices"
+      operationId: microservicesIdPut
+      summary: Update a single cosmos microservices
   # delete '/microservices/:id', to: 'microservices#destroy', id: /[^\/]+/
+    delete:
+      tags:
+        - "microservices"
+      operationId: microservicesIdDelete
+      summary: Delete a single cosmos microservices
 
   # get '/microservice_status/:id', to: 'microservice_status#show', id: /[^\/]+/
- 
-  # post '/tools/position/:id', to: 'tools#position', id: /[^\/]+/
+  /cosmos-api/microservices_status/{id}:
+    get:
+      tags:
+        - "microservices status"
+      operationId: microservicesStatusGet
+      summary: Get a cosmos microservices status
+
   # resources :tools, only: [:index, :create]
+  /cosmos-api/tools:
+    get:
+      tags:
+        - "tools"
+      operationId: toolsGet
+      summary: Get cosmos tools
+    post:
+      tags:
+        - "tools"
+      operationId: toolsPost
+      summary: Create a cosmos tool
   # get '/tools/:id', to: 'tools#show', id: /[^\/]+/
+  /cosmos-api/tools/{id}:
+    get:
+      tags:
+        - "tools"
+      operationId: toolsIdGet
+      summary: Get a single cosmos tools
   # match '/tools/:id', to: 'tools#update', id: /[^\/]+/, via: [:patch, :put]
+    patch:
+      tags:
+        - "tools"
+      operationId: toolsIdPatch
+      summary: Update a single cosmos tools
+    put:
+      tags:
+        - "tools"
+      operationId: toolsIdPut
+      summary: Update a single cosmos tools
   # delete '/tools/:id', to: 'tools#destroy', id: /[^\/]+/
- 
-  # resources :scopes, only: [:index, :create]
-  # get '/scopes/:id', to: 'scopes#show', id: /[^\/]+/
-  # match '/scopes/:id', to: 'scopes#update', id: /[^\/]+/, via: [:patch, :put]
-  # delete '/scopes/:id', to: 'scopes#destroy', id: /[^\/]+/
- 
-  # resources :roles, only: [:index, :create]
-  # get '/roles/:id', to: 'roles#show', id: /[^\/]+/
-  # match '/roles/:id', to: 'roles#update', id: /[^\/]+/, via: [:patch, :put]
-  # delete '/roles/:id', to: 'roles#destroy', id: /[^\/]+/
- 
+    delete:
+      tags:
+        - "tools"
+      operationId: toolsIdDelete
+      summary: Delete a single cosmos tools
+
+  # post '/tools/position/:id', to: 'tools#position', id: /[^\/]+/
+  /cosmos-api/tools/position/{id}:
+    post:
+      tags:
+        - "tool position"
+      operationId: toolsPositionGet
+      summary: Update a tools position in the nav menu
+
   # resources :widgets, only: [:index, :create]
+  /cosmos-api/widgets:
+    get:
+      tags:
+        - "widgets"
+      operationId: widgetsGet
+      summary: Get cosmos widgets
+    post:
+      tags:
+        - "widgets"
+      operationId: widgetsPost
+      summary: Create a cosmos widget
   # get '/widgets/:id', to: 'widgets#show', id: /[^\/]+/
+  /cosmos-api/widgets/{id}:
+    get:
+      tags:
+        - "widgets"
+      operationId: widgetsIdGet
+      summary: Get a single cosmos widget
   # match '/widgets/:id', to: 'widgets#update', id: /[^\/]+/, via: [:patch, :put]
+    patch:
+      tags:
+        - "widgets"
+      operationId: widgetsIdPatch
+      summary: Update a single cosmos widget
+    put:
+      tags:
+        - "widgets"
+      operationId: widgetsIdPut
+      summary: Update a single cosmos widget
   # delete '/widgets/:id', to: 'widgets#destroy', id: /[^\/]+/
+    delete:
+      tags:
+        - "widgets"
+      operationId: widgetsIdDelete
+      summary: Delete a single cosmos widget
  
-  # resources :permissions, only: [:index]
- 
-  # post '/plugins/install/:id', to: 'plugins#install', id: /[^\/]+/
   # resources :plugins, only: [:index, :create]
+  /cosmos-api/plugins:
+    get:
+      tags:
+        - "plugins"
+      operationId: pluginsGet
+      summary: Get cosmos plugins
+    post:
+      tags:
+        - "plugins"
+      operationId: pluginsPost
+      summary: Create a cosmos plugin
   # get '/plugins/:id', to: 'plugins#show', id: /[^\/]+/
+  /cosmos-api/plugins/{id}:
+    get:
+      tags:
+        - "plugins"
+      operationId: pluginsIdGet
+      summary: Get a single cosmos plugin
   # match '/plugins/:id', to: 'plugins#update', id: /[^\/]+/, via: [:patch, :put]
+    patch:
+      tags:
+        - "plugins"
+      operationId: pluginsIdPatch
+      summary: Update a single cosmos plugin
+    put:
+      tags:
+        - "plugins"
+      operationId: pluginsIdPut
+      summary: Update a single cosmos plugin
   # delete '/plugins/:id', to: 'plugins#destroy', id: /[^\/]+/
+    delete:
+      tags:
+        - "plugins"
+      operationId: pluginsIdDelete
+      summary: Delete a single cosmos plugin
+
+  # post '/plugins/install/:id', to: 'plugins#install', id: /[^\/]+/
+  /cosmos-api/plugins/install/{id}:
+    post:
+      tags:
+        - "install plugin"
+      operationId: pluginsInstallIdPost
+      summary: Install a single cosmos plugin
  
   # resources :environment, only: [:index, :create]
+  /cosmos-api/environment:
+    get:
+      tags:
+        - "environment"
+      operationId: environmentsGet
+      summary: Get cosmos environment
+    post:
+      tags:
+        - "environment"
+      operationId: environmentPost
+      summary: Create a cosmos environment
   # delete '/environment/:name', to: 'environment#destroy', name: /[^\/]+/
+  /cosmos-api/environment/{name}:
+    delete:
+      tags:
+        - "environment"
+      operationId: environmentIdDelete
+      summary: Delete a single cosmos environment
  
   # resources :timeline, only: [:index, :create]
+  /cosmos-api/timeline:
+    get:
+      tags:
+        - "timeline"
+      operationId: timelineGet
+      summary: Get cosmos timelines
+    post:
+      tags:
+        - "timeline"
+      operationId: timelinePost
+      summary: Create a cosmos timeline
   # get '/timeline/:name', to: 'timeline#show', name: /[^\/]+/
-  # post '/timeline/:name/color', to: 'timeline#color', name: /[^\/]+/
+  /cosmos-api/timeline/{name}:
+    get:
+      tags:
+        - "timeline"
+      operationId: timelineGet
+      summary: Get a cosmos timeline
   # delete '/timeline/:name', to: 'timeline#destroy', name: /[^\/]+/
+    delete:
+      tags:
+        - "timeline"
+      operationId: timelineDelete
+      summary: Delete a cosmos timeline
+  # post '/timeline/:name/color', to: 'timeline#color', name: /[^\/]+/
+  /cosmos-api/timeline/{name}/color:
+    post:
+      tags:
+        - "timeline"
+      operationId: timelineColorPost
+      summary: Update cosmos timeline color
  
   # post '/timeline/activities/create', to: 'activity#multi_create'
+  /cosmos-api/timeline/activities/create:
+    post:
+      tags:
+        - "timeline"
+      operationId: timelineMultiCreatePost
+      summary: Update cosmos timeline with multiple activities
   # post '/timeline/activities/delete', to: 'activity#multi_destroy'
+  /cosmos-api/timeline/activities/delete:
+    post:
+      tags:
+        - "timeline"
+      operationId: timelineMultiDeletePost
+      summary: Delete multiple activities on a cosmos timeline
  
   # get '/timeline/:name/count', to: 'activity#count', name: /[^\/]+/
+  /cosmos-api/timeline/{name}/count:
+    get:
+      tags:
+        - "timeline"
+      operationId: timelineCountGet
+      summary: Get the number of activities on cosmos timeline
   # get '/timeline/:name/activities', to: 'activity#index', name: /[^\/]+/
+  /cosmos-api/timeline/{name}/activities:
+    get:
+      tags:
+        - "timeline"
+      operationId: timelineActivitiesGet
+      summary: Get activities on cosmos timeline
   # post '/timeline/:name/activities', to: 'activity#create', name: /[^\/]+/
+    post:
+      tags:
+        - "timeline"
+      operationId: timelineActivitiesPost
+      summary: Create an activity on cosmos timeline
   # get '/timeline/:name/activity/:id', to: 'activity#show', name: /[^\/]+/, id: /[^\/]+/
+  /cosmos-api/timeline/{name}/activity/{id}:
+    get:
+      tags:
+        - "activity"
+      operationId: timelineActivityGet
+      summary: Get activity on cosmos timeline
   # post '/timeline/:name/activity/:id', to: 'activity#event', name: /[^\/]+/, id: /[^\/]+/
+    post:
+      tags:
+        - "activity"
+      operationId: timelineActivityGet
+      summary: Get activity on cosmos timeline
   # match '/timeline/:name/activity/:id', to: 'activity#update', name: /[^\/]+/, id: /[^\/]+/, via: [:patch, :put]
+    patch:
+      tags:
+        - "activity"
+      operationId: timelineActivityPatch
+      summary: Update an activity on cosmos timeline
+    put:
+      tags:
+        - "activity"
+      operationId: timelineActivityPut
+      summary: Update an activity on cosmos timeline
   # delete '/timeline/:name/activity/:id', to: 'activity#destroy', name: /[^\/]+/, id: /[^\/]+/
+    delete:
+      tags:
+        - "activity"
+      operationId: timelineActivityDelete
+      summary: Delete an activity on cosmos timeline
  
   # get '/storage/download/:object_id', to: 'storage#get_download_presigned_request', object_id: /[^\/]+/
+  /cosmos-api/storage/download/{object_id}:
+    get:
+      tags:
+        - "storage"
+      operationId: storageGet
+      summary: Storage API Download
   # get '/storage/upload/:object_id', to: 'storage#get_upload_presigned_request', object_id: /[^\/]+/
+  /cosmos-api/storage/upload/{object_id}:
+    get:
+      tags:
+        - "storage"
+      operationId: storageGet
+      summary: Storage API Upload
  
-  # get "/screen/:target" => "api#screens"
-  # get "/screen/:target/:screen" => "api#screen"
   # post "/screen" => "api#screen_save"
+  /cosmos-api/screen:
+    post:
+      tags:
+        - "screen"
+      operationId: screenPost
+      summary: Save a screen
+  # get "/screen/:target" => "api#screens"
+  /cosmos-api/screen/{target}:
+    get:
+      tags:
+        - "screen"
+      operationId: screenGet
+      summary: Get screens from a target
+  # get "/screen/:target/:screen" => "api#screen"
+  /cosmos-api/screen/{target}/{screen}:
+    get:
+      tags:
+        - "screen"
+      operationId: screenGet
+      summary: Get a screen from a target
  
   # post "/api" => "api#api"
+  /cosmos-api/api:
+    post:
+      tags:
+        - "api"
+      operationId: apiPost
+      summary: Json-RPC API
  
   # get "/auth/token-exists" => "auth#token_exists"
+  /cosmos-api/auth/token-exists:
+    get:
+      tags:
+        - "auth"
+      operationId: authTokenExistsPost
+      summary: Token exists
   # post "/auth/verify" => "auth#verify"
+  /cosmos-api/auth/verify:
+    post:
+      tags:
+        - "auth"
+      operationId: authTokenVerifyPost
+      summary: Token verify
   # post "/auth/set" => "auth#set"
+  /cosmos-api/auth/set:
+    get:
+      tags:
+        - "auth"
+      operationId: authTokenSetPost
+      summary: Token Set
  
   # get "/internal/metrics" => "internal_metrics#index"
   /cosmos-api/internal/metrics:
@@ -233,4 +610,18 @@ paths:
           $ref: '#/components/responses/403'
 
   # get "/time" => "time#get_current"
+  /cosmos-api/time:
+    get:
+      tags:
+        - "time"
+      operationId: getTime
+      summary: Get the time of the cosmos server
+ 
   # get "map.json" => "tools#importmap"
+  /cosmos-api/map.json:
+    get:
+      tags:
+        - "map"
+      operationId: Map get
+      summary: Get the map
+ 
