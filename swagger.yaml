@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Cosmos OpenAPI document
-  version: 0.0.1
+  version: 5.0.1
   contact:
     name: Cosmos Support
     url: https://cosmosc2.com
@@ -1087,8 +1087,8 @@ paths:
     get:
       tags:
         - "internal"
-      operationId: internalStatus
-      summary: Get the status of cosmos
+      operationId: internalMetrics
+      summary: Get metrics from cosmos
       responses:
         '200':
           description: |-
@@ -1392,7 +1392,7 @@ paths:
     post:
       tags:
         - "running-script"
-      operationId: postRetryScriptId
+      operationId: postGoScriptId
       summary: Retry running script by id
       parameters:
       - $ref: '#/components/parameters/id'
