@@ -1167,7 +1167,17 @@ paths:
         - "time"
       operationId: getTime
       summary: Get the time of the cosmos server
-      responses: {}
+      responses:
+        '200':
+          description: |-
+            200 response
+          content:
+            application/json:
+              examples:
+                redis:
+                  value: {
+                    "now_nsec":1637364986539504300
+                  }
  
   # get "map.json" => "tools#importmap"
   /cosmos-api/map.json:
@@ -1176,7 +1186,20 @@ paths:
         - "map"
       operationId: mapJsonGet
       summary: Get the map
-      responses: {}
+      responses:
+        '200':
+          description: |-
+            200 response
+          content:
+            application/json:
+              examples:
+                redis:
+                  value: {
+                    "imports":{
+                      "@cosmosc2/tool-scriptrunner":"/tools/scriptrunner/js/app.js",
+                      "@cosmosc2/tool-dataextractor":"/tools/dataextractor/js/app.js"
+                    }
+                  }
  
   # get  "/scripts" => "scripts#index"
   /script-api/scripts:
