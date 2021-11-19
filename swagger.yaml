@@ -700,6 +700,11 @@ paths:
         - "environment"
       operationId: environmentsGet
       summary: Get cosmos environment
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "environment"
@@ -752,7 +757,7 @@ paths:
     get:
       tags:
         - "timeline"
-      operationId: timelineGet
+      operationId: timelineGetName
       summary: Get a cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -765,7 +770,7 @@ paths:
     delete:
       tags:
         - "timeline"
-      operationId: timelineDelete
+      operationId: timelineDeleteName
       summary: Delete a cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -779,7 +784,7 @@ paths:
     post:
       tags:
         - "timeline"
-      operationId: timelineColorPost
+      operationId: timelineColorPostName
       summary: Update cosmos timeline color
       parameters:
       - $ref: '#/components/parameters/name'
@@ -819,7 +824,7 @@ paths:
     get:
       tags:
         - "timeline"
-      operationId: timelineCountGet
+      operationId: getTimelineNameCount
       summary: Get the number of activities on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -833,7 +838,7 @@ paths:
     get:
       tags:
         - "timeline"
-      operationId: timelineActivitiesGet
+      operationId: getTimelineActivities
       summary: Get activities on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -846,7 +851,7 @@ paths:
     post:
       tags:
         - "timeline"
-      operationId: timelineActivitiesPost
+      operationId: postTimelineActivities
       summary: Create an activity on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -860,7 +865,7 @@ paths:
     get:
       tags:
         - "activity"
-      operationId: timelineActivityGet
+      operationId: getTimelineActivityId
       summary: Get activity on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -874,7 +879,7 @@ paths:
     post:
       tags:
         - "activity"
-      operationId: timelineActivityGet
+      operationId: postTimelineActivityId
       summary: Get activity on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -888,7 +893,7 @@ paths:
     patch:
       tags:
         - "activity"
-      operationId: timelineActivityPatch
+      operationId: patchTimelineActivityId
       summary: Update an activity on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -901,7 +906,7 @@ paths:
     put:
       tags:
         - "activity"
-      operationId: timelineActivityPut
+      operationId: putTimelineActivityId
       summary: Update an activity on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -916,7 +921,7 @@ paths:
     delete:
       tags:
         - "activity"
-      operationId: timelineActivityDelete
+      operationId: deleteTimelineActivityId
       summary: Delete an activity on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
@@ -932,7 +937,7 @@ paths:
     get:
       tags:
         - "storage"
-      operationId: storageGet
+      operationId: storageDownloadGet
       summary: Storage API Download
       parameters:
       - name: object_id
@@ -952,7 +957,7 @@ paths:
     get:
       tags:
         - "storage"
-      operationId: storageGet
+      operationId: storageUploadGet
       summary: Storage API Upload
       parameters:
       - name: object_id
@@ -984,7 +989,7 @@ paths:
     get:
       tags:
         - "screen"
-      operationId: screenGet
+      operationId: getScreen
       summary: Get screens from a target
       parameters:
       - name: target
@@ -1004,7 +1009,7 @@ paths:
     get:
       tags:
         - "screen"
-      operationId: screenGet
+      operationId: getScreenTarget
       summary: Get a screen from a target
       parameters:
       - name: target
@@ -1162,6 +1167,7 @@ paths:
         - "time"
       operationId: getTime
       summary: Get the time of the cosmos server
+      responses: {}
  
   # get "map.json" => "tools#importmap"
   /cosmos-api/map.json:
@@ -1170,6 +1176,7 @@ paths:
         - "map"
       operationId: mapJsonGet
       summary: Get the map
+      responses: {}
  
   # get  "/scripts" => "scripts#index"
   /script-api/scripts:
