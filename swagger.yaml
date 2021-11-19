@@ -53,11 +53,21 @@ paths:
         - "routers"
       operationId: routersGet
       summary: Get cosmos routers
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "routers"
       operationId: routersPost
       summary: Create a cosmos router
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # get '/routers/:id', to: 'routers#show', id: /[^\/]+/
   /cosmos-api/routers/{id}:
@@ -68,6 +78,11 @@ paths:
       summary: Get cosmos router id
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # match '/routers/:id', to: 'routers#update', id: /[^\/]+/, via: [:patch, :put]
     put:
       tags:
@@ -76,6 +91,11 @@ paths:
       summary: Update a cosmos routers
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     patch:
       tags:
         - "routers"
@@ -83,6 +103,11 @@ paths:
       summary: Update a cosmos router
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/routers/:id', to: 'routers#destroy', id: /[^\/]+/
     delete:
       tags:
@@ -91,6 +116,11 @@ paths:
       summary: Delete cosmos router
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # resources :interfaces, only: [:index, :create]
   /cosmos-api/interfaces:
@@ -99,11 +129,21 @@ paths:
         - "interfaces"
       operationId: interfacesGet
       summary: Get cosmos interfaces
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "interfaces"
       operationId: interfacesPost
       summary: Create a cosmos interface
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # get '/interfaces/:id', to: 'interfaces#show', id: /[^\/]+/
   /cosmos-api/interfaces/{id}:
@@ -114,6 +154,11 @@ paths:
       summary: Get a single cosmos interface
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # match '/interfaces/:id', to: 'interfaces#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
@@ -122,6 +167,11 @@ paths:
       summary: Update cosmos interface
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     put:
       tags:
         - "interfaces"
@@ -129,6 +179,11 @@ paths:
       summary: Update cosmos interface
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/interfaces/:id', to: 'interfaces#destroy', id: /[^\/]+/
     delete:
       tags:
@@ -137,6 +192,11 @@ paths:
       summary: Delete a cosmos interface
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # resources :targets, only: [:index, :create]
   /cosmos-api/targets:
@@ -145,11 +205,21 @@ paths:
         - "targets"
       operationId: targetsGet
       summary: Get cosmos targets
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "targets"
       operationId: targetsPost
       summary: Create a cosmos target
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/targets/:id', to: 'targets#show', id: /[^\/]+/
   /cosmos-api/targets/{id}:
     get:
@@ -159,6 +229,11 @@ paths:
       summary: Get a single cosmos targets
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # match '/targets/:id', to: 'targets#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
@@ -167,6 +242,11 @@ paths:
       summary: Update a single cosmos targets
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     put:
       tags:
         - "targets"
@@ -174,6 +254,11 @@ paths:
       summary: Update a single cosmos targets
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/targets/:id', to: 'targets#destroy', id: /[^\/]+/
     delete:
       tags:
@@ -182,6 +267,11 @@ paths:
       summary: Delete a single cosmos targets
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # resources :gems, only: [:index, :create]
   /cosmos-api/gems:
@@ -190,11 +280,21 @@ paths:
         - "gems"
       operationId: gemsGet
       summary: Get cosmos gems
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "gems"
       operationId: gemsPost
       summary: Create a cosmos gem
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/gems/:id', to: 'gems#show', id: /[^\/]+/
   /cosmos-api/gems/{id}:
     get:
@@ -204,6 +304,11 @@ paths:
       summary: Get a single cosmos gem
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # match '/gems/:id', to: 'gems#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
@@ -212,6 +317,11 @@ paths:
       summary: Update a single cosmos gem
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     put:
       tags:
         - "gems"
@@ -219,6 +329,11 @@ paths:
       summary: Update a single cosmos gem
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/gems/:id', to: 'gems#destroy', id: /[^\/]+/
     delete:
       tags:
@@ -227,6 +342,11 @@ paths:
       summary: Delete a single cosmos gem
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # resources :microservices, only: [:index, :create]
   /cosmos-api/microservices:
@@ -235,11 +355,21 @@ paths:
         - "microservices"
       operationId: microservicesGet
       summary: Get cosmos microservices
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "microservices"
       operationId: microservicesPost
       summary: Create a cosmos microservices
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/microservices/:id', to: 'microservices#show', id: /[^\/]+/
   /cosmos-api/microservices/{id}:
     get:
@@ -249,6 +379,11 @@ paths:
       summary: Get a single cosmos microservices
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # match '/microservices/:id', to: 'microservices#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
@@ -257,6 +392,11 @@ paths:
       summary: Update a single cosmos microservices
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     put:
       tags:
         - "microservices"
@@ -264,6 +404,11 @@ paths:
       summary: Update a single cosmos microservices
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/microservices/:id', to: 'microservices#destroy', id: /[^\/]+/
     delete:
       tags:
@@ -272,6 +417,11 @@ paths:
       summary: Delete a single cosmos microservices
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # get '/microservice_status/:id', to: 'microservice_status#show', id: /[^\/]+/
   /cosmos-api/microservices_status/{id}:
@@ -282,6 +432,11 @@ paths:
       summary: Get a cosmos microservices status
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # resources :tools, only: [:index, :create]
   /cosmos-api/tools:
@@ -290,11 +445,21 @@ paths:
         - "tools"
       operationId: toolsGet
       summary: Get cosmos tools
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "tools"
       operationId: toolsPost
       summary: Create a cosmos tool
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/tools/:id', to: 'tools#show', id: /[^\/]+/
   /cosmos-api/tools/{id}:
     get:
@@ -304,6 +469,11 @@ paths:
       summary: Get a single cosmos tools
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # match '/tools/:id', to: 'tools#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
@@ -312,6 +482,11 @@ paths:
       summary: Update a single cosmos tools
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     put:
       tags:
         - "tools"
@@ -319,6 +494,11 @@ paths:
       summary: Update a single cosmos tools
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/tools/:id', to: 'tools#destroy', id: /[^\/]+/
     delete:
       tags:
@@ -327,6 +507,11 @@ paths:
       summary: Delete a single cosmos tools
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # post '/tools/position/:id', to: 'tools#position', id: /[^\/]+/
   /cosmos-api/tools/position/{id}:
@@ -337,6 +522,11 @@ paths:
       summary: Update a tools position in the nav menu
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # resources :widgets, only: [:index, :create]
   /cosmos-api/widgets:
@@ -345,11 +535,21 @@ paths:
         - "widgets"
       operationId: widgetsGet
       summary: Get cosmos widgets
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "widgets"
       operationId: widgetsPost
       summary: Create a cosmos widget
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/widgets/:id', to: 'widgets#show', id: /[^\/]+/
   /cosmos-api/widgets/{id}:
     get:
@@ -359,6 +559,11 @@ paths:
       summary: Get a single cosmos widget
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # match '/widgets/:id', to: 'widgets#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
@@ -367,6 +572,11 @@ paths:
       summary: Update a single cosmos widget
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     put:
       tags:
         - "widgets"
@@ -374,6 +584,11 @@ paths:
       summary: Update a single cosmos widget
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/widgets/:id', to: 'widgets#destroy', id: /[^\/]+/
     delete:
       tags:
@@ -382,6 +597,11 @@ paths:
       summary: Delete a single cosmos widget
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # resources :plugins, only: [:index, :create]
   /cosmos-api/plugins:
@@ -390,11 +610,21 @@ paths:
         - "plugins"
       operationId: pluginsGet
       summary: Get cosmos plugins
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "plugins"
       operationId: pluginsPost
       summary: Create a cosmos plugin
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/plugins/:id', to: 'plugins#show', id: /[^\/]+/
   /cosmos-api/plugins/{id}:
     get:
@@ -404,6 +634,11 @@ paths:
       summary: Get a single cosmos plugin
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # match '/plugins/:id', to: 'plugins#update', id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
@@ -412,6 +647,11 @@ paths:
       summary: Update a single cosmos plugin
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     put:
       tags:
         - "plugins"
@@ -419,6 +659,11 @@ paths:
       summary: Update a single cosmos plugin
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/plugins/:id', to: 'plugins#destroy', id: /[^\/]+/
     delete:
       tags:
@@ -427,6 +672,11 @@ paths:
       summary: Delete a single cosmos plugin
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # post '/plugins/install/:id', to: 'plugins#install', id: /[^\/]+/
   /cosmos-api/plugins/install/{id}:
@@ -437,6 +687,11 @@ paths:
       summary: Install a single cosmos plugin
       parameters:
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # resources :environment, only: [:index, :create]
   /cosmos-api/environment:
@@ -450,6 +705,11 @@ paths:
         - "environment"
       operationId: environmentPost
       summary: Create a cosmos environment
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/environment/:name', to: 'environment#destroy', name: /[^\/]+/
   /cosmos-api/environment/{name}:
     delete:
@@ -459,6 +719,11 @@ paths:
       summary: Delete a single cosmos environment
       parameters:
       - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # resources :timeline, only: [:index, :create]
   /cosmos-api/timeline:
@@ -467,11 +732,21 @@ paths:
         - "timeline"
       operationId: timelineGet
       summary: Get cosmos timelines
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     post:
       tags:
         - "timeline"
       operationId: timelinePost
       summary: Create a cosmos timeline
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/timeline/:name', to: 'timeline#show', name: /[^\/]+/
   /cosmos-api/timeline/{name}:
     get:
@@ -481,6 +756,11 @@ paths:
       summary: Get a cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # delete '/timeline/:name', to: 'timeline#destroy', name: /[^\/]+/
     delete:
       tags:
@@ -489,6 +769,11 @@ paths:
       summary: Delete a cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # post '/timeline/:name/color', to: 'timeline#color', name: /[^\/]+/
   /cosmos-api/timeline/{name}/color:
     post:
@@ -498,6 +783,11 @@ paths:
       summary: Update cosmos timeline color
       parameters:
       - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # post '/timeline/activities/create', to: 'activity#multi_create'
   /cosmos-api/timeline/activities/create:
@@ -506,6 +796,11 @@ paths:
         - "timeline"
       operationId: timelineMultiCreatePost
       summary: Update cosmos timeline with multiple activities
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # post '/timeline/activities/delete', to: 'activity#multi_destroy'
   /cosmos-api/timeline/activities/delete:
     post:
@@ -513,6 +808,11 @@ paths:
         - "timeline"
       operationId: timelineMultiDeletePost
       summary: Delete multiple activities on a cosmos timeline
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # get '/timeline/:name/count', to: 'activity#count', name: /[^\/]+/
   /cosmos-api/timeline/{name}/count:
@@ -523,6 +823,11 @@ paths:
       summary: Get the number of activities on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/timeline/:name/activities', to: 'activity#index', name: /[^\/]+/
   /cosmos-api/timeline/{name}/activities:
     get:
@@ -532,6 +837,11 @@ paths:
       summary: Get activities on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # post '/timeline/:name/activities', to: 'activity#create', name: /[^\/]+/
     post:
       tags:
@@ -540,6 +850,11 @@ paths:
       summary: Create an activity on cosmos timeline
       parameters:
       - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/timeline/:name/activity/:id', to: 'activity#show', name: /[^\/]+/, id: /[^\/]+/
   /cosmos-api/timeline/{name}/activity/{id}:
     get:
@@ -550,6 +865,11 @@ paths:
       parameters:
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # post '/timeline/:name/activity/:id', to: 'activity#event', name: /[^\/]+/, id: /[^\/]+/
     post:
       tags:
@@ -559,6 +879,11 @@ paths:
       parameters:
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # match '/timeline/:name/activity/:id', to: 'activity#update', name: /[^\/]+/, id: /[^\/]+/, via: [:patch, :put]
     patch:
       tags:
@@ -568,6 +893,11 @@ paths:
       parameters:
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
     put:
       tags:
         - "activity"
@@ -576,6 +906,12 @@ paths:
       parameters:
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
   # delete '/timeline/:name/activity/:id', to: 'activity#destroy', name: /[^\/]+/, id: /[^\/]+/
     delete:
       tags:
@@ -585,6 +921,11 @@ paths:
       parameters:
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # get '/storage/download/:object_id', to: 'storage#get_download_presigned_request', object_id: /[^\/]+/
   /cosmos-api/storage/download/{object_id}:
@@ -600,6 +941,12 @@ paths:
         required: true
         schema:
           type: string
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
   # get '/storage/upload/:object_id', to: 'storage#get_upload_presigned_request', object_id: /[^\/]+/
   /cosmos-api/storage/upload/{object_id}:
     get:
@@ -614,7 +961,11 @@ paths:
         required: true
         schema:
           type: string
- 
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # post "/screen" => "api#screen_save"
   /cosmos-api/screen:
     post:
@@ -622,6 +973,12 @@ paths:
         - "screen"
       operationId: screenPost
       summary: Save a screen
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
   # get "/screen/:target" => "api#screens"
   /cosmos-api/screen/{target}:
     get:
@@ -636,6 +993,12 @@ paths:
         required: true
         schema:
           type: string
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
   # get "/screen/:target/:screen" => "api#screen"
   /cosmos-api/screen/{target}/{screen}:
     get:
@@ -656,6 +1019,11 @@ paths:
         required: true
         schema:
           type: string
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # post "/api" => "api#api"
   /cosmos-api/api:
@@ -664,6 +1032,11 @@ paths:
         - "api"
       operationId: apiPost
       summary: Json-RPC API
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # get "/auth/token-exists" => "auth#token_exists"
   /cosmos-api/auth/token-exists:
@@ -672,6 +1045,12 @@ paths:
         - "auth"
       operationId: authTokenExistsPost
       summary: Token exists
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
   # post "/auth/verify" => "auth#verify"
   /cosmos-api/auth/verify:
     post:
@@ -679,6 +1058,12 @@ paths:
         - "auth"
       operationId: authTokenVerifyPost
       summary: Token verify
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
   # post "/auth/set" => "auth#set"
   /cosmos-api/auth/set:
     get:
@@ -686,6 +1071,11 @@ paths:
         - "auth"
       operationId: authTokenSetPost
       summary: Token Set
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # get "/internal/metrics" => "internal_metrics#index"
   /cosmos-api/internal/metrics:
@@ -710,6 +1100,10 @@ paths:
                     metric_output_duration_seconds{scope="DEFAULT",microservice="DEFAULT__DECOMLOG__TEMPLATED",percentile="90"} 0.0011830799994640984
                     metric_output_duration_seconds{scope="DEFAULT",microservice="DEFAULT__DECOMLOG__TEMPLATED",percentile="95"} 0.0015175499993347328
                     metric_output_duration_seconds{scope="DEFAULT",microservice="DEFAULT__DECOMLOG__TEMPLATED",percentile="99"} 0.0031585980016825416
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # get "/internal/status" => "internal_status#status"
   /cosmos-api/internal/status:
@@ -733,6 +1127,10 @@ paths:
                   value: {
                     "status": "DOWN"
                   }
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # get "/internal/health" => "internal_health#health"
   /cosmos-api/internal/health:
@@ -770,6 +1168,274 @@ paths:
     get:
       tags:
         - "map"
-      operationId: Map get
+      operationId: mapJsonGet
       summary: Get the map
  
+  # get  "/scripts" => "scripts#index"
+  /script-api/scripts:
+    get:
+      tags:
+        - "scripts"
+      operationId: getScripts
+      summary: Get script
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/scripts/syntax" => "scripts#syntax"
+  /script-api/syntax:
+    post:
+      tags:
+        - "syntax"
+      operationId: postSyntax
+      summary: Get syntax
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # get  "/scripts/*name" => "scripts#body", format: false, defaults: { format: 'html' }
+  /script-api/{name}:
+    get:
+      tags:
+        - "script"
+      operationId: getScript
+      summary: Get a single script
+      parameters:
+      - name: name
+        in: path
+        description: script name
+        required: true
+        schema:
+          type: string
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # post "/scripts/*name" => "scripts#create", format: false, defaults: { format: 'html' }
+    post:
+      tags:
+        - "script"
+      operationId: postScript
+      summary: Post a single script
+      parameters:
+      - name: name
+        in: path
+        description: script name
+        required: true
+        schema:
+          type: string
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/scripts/*name/run(/:disconnect)" => "scripts#run", format: false, defaults: { format: 'html' }
+  /script-api/{name}/run:
+    post:
+      tags:
+        - "script"
+      operationId: postRunScript
+      summary: Get a single script
+      parameters:
+      - name: name
+        in: path
+        description: script name
+        required: true
+        schema:
+          type: string
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  /script-api/{name}/run/disconnect:
+    post:
+      tags:
+        - "script"
+      operationId: postDisconnectScript
+      summary: Post a single script
+      parameters:
+      - name: name
+        in: path
+        description: script name
+        required: true
+        schema:
+          type: string
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # post "/scripts/*name/delete" => "scripts#destroy", format: false, defaults: { format: 'html' }
+  /script-api/{name}/delete:
+    post:
+      tags:
+        - "script"
+      operationId: postDeleteScript
+      summary: Remove a single script
+      parameters:
+      - name: name
+        in: path
+        description: script name
+        required: true
+        schema:
+          type: string
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403' 
+
+  # get  "/running-script" => "running_script#index"
+  /script-api/running-script:
+    get:
+      tags:
+        - "running-script"
+      operationId: getRunningScripts
+      summary: Get running scripts
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403' 
+
+  # get  "/running-script/:id" => "running_script#show"
+  /script-api/running-script/{id}:
+    get:
+      tags:
+        - "running-script"
+      operationId: getRunningScriptId
+      summary: get running script by id
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/running-script/:id/start" => "running_script#start"
+  /script-api/running-script/{id}/start:
+    post:
+      tags:
+        - "running-script"
+      operationId: postStartScriptId
+      summary: Start running script by id
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/running-script/:id/stop" => "running_script#stop"
+  /script-api/running-script/{id}/stop:
+    post:
+      tags:
+        - "running-script"
+      operationId: postStopScriptId
+      summary: Stop running script by id
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/running-script/:id/pause" => "running_script#pause"
+  /script-api/running-script/{id}/pause:
+    post:
+      tags:
+        - "running-script"
+      operationId: postPauseScriptId
+      summary: Pause running script by id
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/running-script/:id/retry" => "running_script#retry"
+  /script-api/running-script/{id}/retry:
+    post:
+      tags:
+        - "running-script"
+      operationId: postRetryScriptId
+      summary: Retry running script by id
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/running-script/:id/go" => "running_script#go"
+  /script-api/running-script/{id}/go:
+    post:
+      tags:
+        - "running-script"
+      operationId: postRetryScriptId
+      summary: Retry running script by id
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/running-script/:id/step" => "running_script#step"
+  /script-api/running-script/{id}/step:
+    post:
+      tags:
+        - "running-script"
+      operationId: postStepScriptId
+      summary: Step running script by id
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/running-script/:id/prompt" => "running_script#prompt"
+  /script-api/running-script/{id}/prompt:
+    post:
+      tags:
+        - "running-script"
+      operationId: postPromptScriptId
+      summary: Prompt running script by id
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post "/running-script/:id/:method" => "running_script#method"
+  /script-api/running-script/{id}/method:
+    post:
+      tags:
+        - "running-script"
+      operationId: postMethodScriptId
+      summary: Method running script by id
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
