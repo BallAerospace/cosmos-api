@@ -8,6 +8,13 @@ info:
     email: cosmos@ballaerospace.com
 components:
   parameters:
+    authorization:
+      name: authorization
+      in: header
+      description: The authorization to access the api
+      required: true
+      schema:
+        type: string
     id:
       name: id
       in: path
@@ -22,6 +29,35 @@ components:
       required: true
       schema:
         type: string
+    object:
+      name: object
+      in: path
+      description: Object Id to request
+      required: true
+      schema:
+        type: string
+    scope:
+      name: scope
+      in: query
+      description: scope
+      required: true
+      schema:
+        type: string
+    screen:
+      name: screen
+      in: path
+      description: Cosmos target screen
+      required: true
+      schema:
+        type: string
+    target:
+      name: target
+      in: path
+      description: Cosmos target
+      required: true
+      schema:
+        type: string
+
   responses:
     '401':
       description: |-
@@ -53,6 +89,8 @@ paths:
         - "routers"
       operationId: routersGet
       summary: Get cosmos routers
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -63,6 +101,8 @@ paths:
         - "routers"
       operationId: routersPost
       summary: Create a cosmos router
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -77,6 +117,7 @@ paths:
       operationId: routersIdGet
       summary: Get cosmos router id
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -90,6 +131,7 @@ paths:
       operationId: routersPut
       summary: Update a cosmos routers
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -102,6 +144,7 @@ paths:
       operationId: routersPatch
       summary: Update a cosmos router
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -115,6 +158,7 @@ paths:
       operationId: routersDelete
       summary: Delete cosmos router
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -129,6 +173,8 @@ paths:
         - "interfaces"
       operationId: interfacesGet
       summary: Get cosmos interfaces
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -139,6 +185,8 @@ paths:
         - "interfaces"
       operationId: interfacesPost
       summary: Create a cosmos interface
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -153,6 +201,7 @@ paths:
       operationId: interfacesIdGet
       summary: Get a single cosmos interface
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -166,6 +215,7 @@ paths:
       operationId: interfacesIdPatch
       summary: Update cosmos interface
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -178,6 +228,7 @@ paths:
       operationId: interfacesIdPut
       summary: Update cosmos interface
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -191,6 +242,7 @@ paths:
       operationId: interfacesIdDelete
       summary: Delete a cosmos interface
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -205,6 +257,8 @@ paths:
         - "targets"
       operationId: targetsGet
       summary: Get cosmos targets
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -215,6 +269,8 @@ paths:
         - "targets"
       operationId: targetsPost
       summary: Create a cosmos target
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -228,6 +284,7 @@ paths:
       operationId: targetsIdGet
       summary: Get a single cosmos targets
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -241,6 +298,7 @@ paths:
       operationId: targetsIdPatch
       summary: Update a single cosmos targets
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -253,6 +311,7 @@ paths:
       operationId: targetsIdPut
       summary: Update a single cosmos targets
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -266,6 +325,7 @@ paths:
       operationId: targetsIdDelete
       summary: Delete a single cosmos targets
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -280,6 +340,8 @@ paths:
         - "gems"
       operationId: gemsGet
       summary: Get cosmos gems
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -290,6 +352,8 @@ paths:
         - "gems"
       operationId: gemsPost
       summary: Create a cosmos gem
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -303,6 +367,7 @@ paths:
       operationId: gemsIdGet
       summary: Get a single cosmos gem
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -316,6 +381,7 @@ paths:
       operationId: gemsIdPatch
       summary: Update a single cosmos gem
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -328,6 +394,7 @@ paths:
       operationId: gemsIdPut
       summary: Update a single cosmos gem
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -341,6 +408,7 @@ paths:
       operationId: gemsIdDelete
       summary: Delete a single cosmos gem
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -355,6 +423,8 @@ paths:
         - "microservices"
       operationId: microservicesGet
       summary: Get cosmos microservices
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -365,6 +435,8 @@ paths:
         - "microservices"
       operationId: microservicesPost
       summary: Create a cosmos microservices
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -378,6 +450,7 @@ paths:
       operationId: microservicesIdGet
       summary: Get a single cosmos microservices
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -391,6 +464,7 @@ paths:
       operationId: microservicesIdPatch
       summary: Update a single cosmos microservices
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -403,6 +477,7 @@ paths:
       operationId: microservicesIdPut
       summary: Update a single cosmos microservices
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -416,6 +491,7 @@ paths:
       operationId: microservicesIdDelete
       summary: Delete a single cosmos microservices
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -431,6 +507,7 @@ paths:
       operationId: microservicesStatusGet
       summary: Get a cosmos microservices status
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -445,6 +522,8 @@ paths:
         - "tools"
       operationId: toolsGet
       summary: Get cosmos tools
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -455,6 +534,8 @@ paths:
         - "tools"
       operationId: toolsPost
       summary: Create a cosmos tool
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -468,6 +549,7 @@ paths:
       operationId: toolsIdGet
       summary: Get a single cosmos tools
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -481,6 +563,7 @@ paths:
       operationId: toolsIdPatch
       summary: Update a single cosmos tools
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -493,6 +576,7 @@ paths:
       operationId: toolsIdPut
       summary: Update a single cosmos tools
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -506,6 +590,7 @@ paths:
       operationId: toolsIdDelete
       summary: Delete a single cosmos tools
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -521,6 +606,7 @@ paths:
       operationId: toolsPositionGet
       summary: Update a tools position in the nav menu
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -535,6 +621,8 @@ paths:
         - "widgets"
       operationId: widgetsGet
       summary: Get cosmos widgets
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -545,6 +633,8 @@ paths:
         - "widgets"
       operationId: widgetsPost
       summary: Create a cosmos widget
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -558,6 +648,7 @@ paths:
       operationId: widgetsIdGet
       summary: Get a single cosmos widget
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -571,6 +662,7 @@ paths:
       operationId: widgetsIdPatch
       summary: Update a single cosmos widget
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -583,6 +675,7 @@ paths:
       operationId: widgetsIdPut
       summary: Update a single cosmos widget
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -596,6 +689,7 @@ paths:
       operationId: widgetsIdDelete
       summary: Delete a single cosmos widget
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -610,6 +704,8 @@ paths:
         - "plugins"
       operationId: pluginsGet
       summary: Get cosmos plugins
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -620,6 +716,8 @@ paths:
         - "plugins"
       operationId: pluginsPost
       summary: Create a cosmos plugin
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -633,6 +731,7 @@ paths:
       operationId: pluginsIdGet
       summary: Get a single cosmos plugin
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -646,6 +745,7 @@ paths:
       operationId: pluginsIdPatch
       summary: Update a single cosmos plugin
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -658,6 +758,7 @@ paths:
       operationId: pluginsIdPut
       summary: Update a single cosmos plugin
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -671,6 +772,7 @@ paths:
       operationId: pluginsIdDelete
       summary: Delete a single cosmos plugin
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -686,6 +788,7 @@ paths:
       operationId: pluginsInstallIdPost
       summary: Install a single cosmos plugin
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/id'
       responses:
         '401':
@@ -700,6 +803,8 @@ paths:
         - "environment"
       operationId: environmentsGet
       summary: Get cosmos environment
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -710,6 +815,8 @@ paths:
         - "environment"
       operationId: environmentPost
       summary: Create a cosmos environment
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -723,6 +830,7 @@ paths:
       operationId: environmentIdDelete
       summary: Delete a single cosmos environment
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       responses:
         '401':
@@ -737,7 +845,18 @@ paths:
         - "timeline"
       operationId: timelineGet
       summary: Get cosmos timelines
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
       responses:
+        '200':
+          description: |-
+            Returns an array/list of timeline values
+          content:
+            application/json:
+              examples:
+                timelines:
+                  value: [{"name":"system42","color":"#7ed21b","scope":"DEFAULT","updated_at":1638553977861814500}]
         '401':
           $ref: '#/components/responses/401'
         '403':
@@ -747,6 +866,22 @@ paths:
         - "timeline"
       operationId: timelinePost
       summary: Create a cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              'name with no color value':
+                value: {
+                  "name": "system42"
+                }
+              namePlusColor:
+                value: {
+                  "name": "system42",
+                  "color": "#FFFFFF"
+                }
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -760,6 +895,7 @@ paths:
       operationId: timelineGetName
       summary: Get a cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       responses:
         '401':
@@ -773,6 +909,7 @@ paths:
       operationId: timelineDeleteName
       summary: Delete a cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       responses:
         '401':
@@ -787,6 +924,7 @@ paths:
       operationId: timelineColorPostName
       summary: Update cosmos timeline color
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       responses:
         '401':
@@ -801,6 +939,8 @@ paths:
         - "timeline"
       operationId: timelineMultiCreatePost
       summary: Update cosmos timeline with multiple activities
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -813,6 +953,8 @@ paths:
         - "timeline"
       operationId: timelineMultiDeletePost
       summary: Delete multiple activities on a cosmos timeline
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -827,6 +969,7 @@ paths:
       operationId: getTimelineNameCount
       summary: Get the number of activities on cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       responses:
         '401':
@@ -841,6 +984,7 @@ paths:
       operationId: getTimelineActivities
       summary: Get activities on cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       responses:
         '401':
@@ -854,6 +998,7 @@ paths:
       operationId: postTimelineActivities
       summary: Create an activity on cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       responses:
         '401':
@@ -868,6 +1013,7 @@ paths:
       operationId: getTimelineActivityId
       summary: Get activity on cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
       responses:
@@ -882,6 +1028,7 @@ paths:
       operationId: postTimelineActivityId
       summary: Get activity on cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
       responses:
@@ -896,6 +1043,7 @@ paths:
       operationId: patchTimelineActivityId
       summary: Update an activity on cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
       responses:
@@ -909,6 +1057,7 @@ paths:
       operationId: putTimelineActivityId
       summary: Update an activity on cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
       responses:
@@ -924,6 +1073,7 @@ paths:
       operationId: deleteTimelineActivityId
       summary: Delete an activity on cosmos timeline
       parameters:
+      - $ref: '#/components/parameters/authorization'
       - $ref: '#/components/parameters/name'
       - $ref: '#/components/parameters/id'
       responses:
@@ -940,12 +1090,8 @@ paths:
       operationId: storageDownloadGet
       summary: Storage API Download
       parameters:
-      - name: object_id
-        in: path
-        description: Object ID
-        required: true
-        schema:
-          type: string
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/object'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -960,17 +1106,14 @@ paths:
       operationId: storageUploadGet
       summary: Storage API Upload
       parameters:
-      - name: object_id
-        in: path
-        description: Object ID
-        required: true
-        schema:
-          type: string
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/object'
       responses:
         '401':
           $ref: '#/components/responses/401'
         '403':
           $ref: '#/components/responses/403'
+
   # post "/screen" => "api#screen_save"
   /cosmos-api/screen:
     post:
@@ -978,6 +1121,8 @@ paths:
         - "screen"
       operationId: screenPost
       summary: Save a screen
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -992,12 +1137,8 @@ paths:
       operationId: getScreen
       summary: Get screens from a target
       parameters:
-      - name: target
-        in: path
-        description: Cosmos target
-        required: true
-        schema:
-          type: string
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/target'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -1012,18 +1153,9 @@ paths:
       operationId: getScreenTarget
       summary: Get a screen from a target
       parameters:
-      - name: target
-        in: path
-        description: Cosmos target
-        required: true
-        schema:
-          type: string
-      - name: screen
-        in: path
-        description: Cosmos target screen
-        required: true
-        schema:
-          type: string
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/screen'
+      - $ref: '#/components/parameters/target'
       responses:
         '401':
           $ref: '#/components/responses/401'
@@ -1037,6 +1169,8 @@ paths:
         - "api"
       operationId: apiPost
       summary: Json-RPC API
+      parameters:
+      - $ref: '#/components/parameters/authorization'
       responses:
         '401':
           $ref: '#/components/responses/401'
