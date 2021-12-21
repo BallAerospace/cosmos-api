@@ -1081,6 +1081,122 @@ paths:
           $ref: '#/components/responses/401'
         '403':
           $ref: '#/components/responses/403'
+
+  # get '/trigger', to: 'trigger#index'
+  /cosmos-api/trigger:
+    get:
+      tags:
+        - "trigger"
+      operationId: triggerGetList
+      summary: Get a list of cosmos triggers
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+    post:
+      tags:
+        - "trigger"
+      operationId: triggerPostNew
+      summary: Create a new cosmos triggers
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # get '/trigger/:name', to: 'trigger#show', name: /[^\/]+/
+  /cosmos-api/trigger/{name}:
+    get:
+      tags:
+        - "trigger"
+      operationId: triggerGetName
+      summary: Get a cosmos trigger
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+    delete:
+      tags:
+        - "trigger"
+      operationId: triggerDeleteName
+      summary: Delete a cosmos trigger
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+ 
+  # get '/procedure', to: 'procedure#index'
+  /cosmos-api/procedure:
+    get:
+      tags:
+        - "procedure"
+      operationId: procedureGetList
+      summary: Get a list of cosmos procedures
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+    post:
+      tags:
+        - "procedure"
+      operationId: procedurePostList
+      summary: Create a new cosmos procedures
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # get '/procedure/:name', to: 'procedure#show', name: /[^\/]+/
+  /cosmos-api/procedure/{name}:
+    get:
+      tags:
+        - "procedure"
+      operationId: procedureGetName
+      summary: Get a cosmos procedure
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+    delete:
+      tags:
+        - "procedure"
+      operationId: procedureDeleteName
+      summary: Delete a cosmos procedure
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
  
   # get '/storage/download/:object_id', to: 'storage#get_download_presigned_request', object_id: /[^\/]+/
   /cosmos-api/storage/download/{object_id}:
