@@ -57,6 +57,14 @@ components:
       required: true
       schema:
         type: string
+    group:
+      name: group
+      in: path
+      description: Cosmos trigger group
+      required: true
+      schema:
+        type: string
+
 
   responses:
     '401':
@@ -1081,7 +1089,388 @@ paths:
           $ref: '#/components/responses/401'
         '403':
           $ref: '#/components/responses/403'
- 
+
+  # get '/autonomic/group', to: 'trigger_group#index'
+  /cosmos-api/autonomic/group:
+    get:
+      tags:
+        - "trigger group"
+      operationId: getAutonomicTriggerGroups
+      summary: Get a list of autonomic trigger groups
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # post '/autonomic/group', to: 'trigger_group#create'
+    post:
+      tags:
+        - "trigger group"
+      operationId: postAutonomicTriggerGroups
+      summary: Create a new autonomic trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              name:
+                value: {
+                  "name": "group42"
+                }
+              namePlusColor:
+                value: {
+                  "name": "group42",
+                  "color": "#FFFFFF"
+                }
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # get '/autonomic/group/:group', to: 'trigger_group#show', group: /[^\/]+/
+  /cosmos-api/autonomic/group/{group}:
+    get:
+      tags:
+        - "trigger group"
+      operationId: getAutonomicTriggerGroup
+      summary: Get an autonomic trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # delete '/autonomic/group/:group', to: 'trigger_group#destroy', group: /[^\/]+/
+    delete:
+      tags:
+        - "trigger group"
+      operationId: deleteAutonomicTriggerGroup
+      summary: Delete an autonomic trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # post '/autonomic/group/:group/activate', to: 'trigger_group#activate', group: /[^\/]+/
+  /cosmos-api/autonomic/group/{group}/activate:
+    post:
+      tags:
+        - "trigger group"
+      operationId: postActivateAutonomicTriggerGroups
+      summary: Activate an autonomic trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              activate:
+                value: {}
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # post '/autonomic/group/:group/deactivate', to: 'trigger_group#deactivate', group: /[^\/]+/
+  /cosmos-api/autonomic/group/{group}/deactivate:
+    post:
+      tags:
+        - "trigger group"
+      operationId: postDeactivateAutonomicTriggerGroups
+      summary: Deactivate an autonomic trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              activate:
+                value: {}
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # get '/autonomic/:group/trigger', to: 'trigger#index', group: /[^\/]+/
+  /cosmos-api/autonomic/group/{group}/trigger:
+    get:
+      tags:
+        - "trigger group"
+      operationId: getAutonomicTriggerGroupTriggers
+      summary: Get a list of autonomic trigger group triggers
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # post '/autonomic/:group/trigger', to: 'trigger#create', group: /[^\/]+/
+    post:
+      tags:
+        - "trigger"
+      operationId: postAutonomicTriggerGroupTrigger
+      summary: Create a new autonomic trigger in a trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              trigger:
+                value: {
+                  "description": "INST ADCS POSX > 690000",
+                  "group": "group42",
+                  "left": {
+                    "type": "item",
+                    "target": "INST",
+                    "packet": "ADCS",
+                    "item": "POSX",
+                    "raw": true,
+                  },
+                  "operator": ">",
+                  "right": {
+                    "type": "value",
+                    "value": 690000,
+                  }
+                }
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # get '/autonomic/:group/trigger/:name', to: 'trigger#show', group: /[^\/]+/, name: /[^\/]+/
+  /cosmos-api/autonomic/group/{group}/trigger/{name}:
+    get:
+      tags:
+        - "trigger"
+      operationId: getAutonomicTriggerGroupTrigger
+      summary: Get an autonomic trigger in a trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # delete '/autonomic/:group/trigger/:name', to: 'trigger#destroy', group: /[^\/]+/, name: /[^\/]+/
+    delete:
+      tags:
+        - "trigger"
+      operationId: deleteAutonomicTriggerGroupTrigger
+      summary: Delete an autonomic trigger in a trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # post '/autonomic/:group/trigger/:name/activate', to: 'trigger#activate', group: /[^\/]+/, name: /[^\/]+/
+  /cosmos-api/autonomic/group/{group}/trigger/{name}/activate:
+    post:
+      tags:
+        - "trigger"
+      operationId: postActivateAutonomicTriggerGroupTrigger
+      summary: Activate an autonomic trigger in a trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      - $ref: '#/components/parameters/name'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              activate:
+                value: {}
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # post '/autonomic/:group/trigger/:name/deactivate', to: 'trigger#deactivate', group: /[^\/]+/, name: /[^\/]+/
+  /cosmos-api/autonomic/group/{group}/trigger/{name}/deactivate:
+    post:
+      tags:
+        - "trigger"
+      operationId: postDeactivateAutonomicTriggerGroupTrigger
+      summary: Activate an autonomic trigger in a trigger group
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/group'
+      - $ref: '#/components/parameters/name'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              deactivate:
+                value: {}
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # get '/autonomic/reaction', to: 'reaction#index'
+  /cosmos-api/autonomic/reaction:
+    get:
+      tags:
+        - "reaction"
+      operationId: getAutonomicReaction
+      summary: Get a list of autonomic reactions
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # post '/autonomic/reaction', to: 'reaction#create'
+    post:
+      tags:
+        - "reaction"
+      operationId: postAutonomicReaction
+      summary: Create an autonomic reactions
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              reaction:
+                value: {
+                  "description": "Run INST CLEAR",
+                  "snooze": 300,
+                  "review": true,
+                  "triggers": [
+                    {
+                      "name": "TV0-1234",
+                      "group": "foo",
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "command",
+                      "value": "INST CLEAR",
+                    }
+                  ]
+                }
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # get '/autonomic/reaction/:name', to: 'reaction#show', name: /[^\/]+/
+  /cosmos-api/autonomic/reaction/{name}:
+    get:
+      tags:
+        - "reaction"
+      operationId: getActivateAutonomicReaction
+      summary: Activate an autonomic reaction
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+  # delete '/autonomic/reaction/:name', to: 'reaction#destroy', name: /[^\/]+/
+    delete:
+      tags:
+        - "reaction"
+      operationId: deleteActivateAutonomicReaction
+      summary: Delete an autonomic reaction
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post '/autonomic/reaction/:name/activate', to: 'reaction#activate', name: /[^\/]+/
+  /cosmos-api/autonomic/reaction/{name}/activate:
+    post:
+      tags:
+        - "reaction"
+      operationId: postActivateAutonomicReaction
+      summary: Activate an autonomic reaction
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/name'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              activate:
+                value: {}
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
+  # post '/autonomic/reaction/:name/deactivate', to: 'reaction#deactivate', name: /[^\/]+/
+  /cosmos-api/autonomic/reaction/{name}/deactivate:
+    post:
+      tags:
+        - "reaction"
+      operationId: postDeactivateAutonomicReaction
+      summary: Deactivate an autonomic reaction
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/name'
+      requestBody:
+        content: 
+          application/json:
+            examples:
+              deactivate:
+                value: {}
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+
   # get '/storage/download/:object_id', to: 'storage#get_download_presigned_request', object_id: /[^\/]+/
   /cosmos-api/storage/download/{object_id}:
     get:
