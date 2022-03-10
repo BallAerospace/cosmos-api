@@ -1686,7 +1686,7 @@ paths:
     put:
       tags:
         - "narrative"
-      operationId: putNarrative
+      operationId: putNarrativeObject
       summary: Update a narrative object
       parameters:
       - $ref: '#/components/parameters/authorization'
@@ -1711,7 +1711,7 @@ paths:
     patch:
       tags:
         - "narrative"
-      operationId: patchNarrative
+      operationId: patchNarrativeObject
       summary: Update a narrative object
       parameters:
       - $ref: '#/components/parameters/authorization'
@@ -1734,11 +1734,81 @@ paths:
         '403':
           $ref: '#/components/responses/403'
   # delete '/narrative/:id', to: 'narrative#delete', id: /[^\/]+/
+    delete:
+      tags:
+        - "narrative"
+      operationId: deleteNarrativeObject
+      summary: Delete a narrative object
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      - $ref: '#/components/parameters/id'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/narrative/_search', to: 'narrative#search'
+  /cosmos-api/narrative/_search:
+    get:
+      tags:
+        - "narrative"
+      operationId: getSearchNarrative
+      summary: Search narrative objects
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # get '/autocomplete/reserved-item-names', to: 'script_autocomplete#get_reserved_item_names'
+  /cosmos-api/autocomplete/reserved-item-names:
+    get:
+      tags:
+        - "autocomplete"
+      operationId: getScriptReservedItemNames
+      summary: Get a list of Cosmos functions
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/autocomplete/keywords/:type', to: 'script_autocomplete#get_keywords', type: /[^\/]+/
+  /cosmos-api/autocomplete/keywords/{type}:
+    get:
+      tags:
+        - "autocomplete"
+      operationId: getScriptKeywords
+      summary: Get a list of Cosmos keywords
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
   # get '/autocomplete/data/:type', to: 'script_autocomplete#get_ace_autocomplete_data', type: /[^\/]+/
+  /cosmos-api/autocomplete/data/{type}:
+    get:
+      tags:
+        - "autocomplete"
+      operationId: getScriptData
+      summary: Get a list of Cosmos configuration information
+      parameters:
+      - $ref: '#/components/parameters/authorization'
+      - $ref: '#/components/parameters/scope'
+      responses:
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
 
   # get '/storage/download/:object_id', to: 'storage#get_download_presigned_request', object_id: /[^\/]+/
   /cosmos-api/storage/download/{object_id}:
