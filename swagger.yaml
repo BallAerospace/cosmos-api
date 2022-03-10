@@ -57,6 +57,14 @@ components:
       required: true
       schema:
         type: string
+    group:
+      name: group
+      in: path
+      description: Cosmos trigger group
+      required: true
+      schema:
+        type: string
+
 
   responses:
     '401':
